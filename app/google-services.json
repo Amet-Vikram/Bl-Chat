@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "590615439712",
+    "project_id": "bl-chat-clone",
+    "storage_bucket": "bl-chat-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590615439712:android:10a24654bbda0e7f501605",
+        "android_client_info": {
+          "package_name": "com.example.blchatclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590615439712-dv211fuk85mjgnh6558gham8imbf5e2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMuRTIXo7Jh5Of6IvwB3QN3DnkL_qxGD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590615439712-dv211fuk85mjgnh6558gham8imbf5e2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

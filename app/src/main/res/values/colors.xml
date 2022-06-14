@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="teal_light">#0b6156</color>
+    <color name="teal_dark">#095049</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="lightGrey">#EDEDED</color>
+    <color name="whatsAppColor">#0B6156</color>
+    <color name="red">#9F0B0B</color>
+    <color name="status_background">#009688</color>
+    <color name="chat_background">#8BC34A</color>
+    <color name="fb_color">#3C5793</color>
+    <color name="lightgreen">#E5ffcc</color>
+    <color name="settingsIconColor">#0E8374</color>
+    <color name="grayBackground">#BCBCBC</color>
+    <color name="chatBackground">#AAAAAA</color>
+    <color name="gray_100">#364447</color>
+    <color name="calm_blue">#2DAEC4</color>
 </resources>
