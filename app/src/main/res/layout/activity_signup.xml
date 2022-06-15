@@ -24,9 +24,9 @@
 
         <ImageView
             android:id="@+id/iv_whatsapp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/whatsapp_icon_black"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/whatsapp_medium"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
 
@@ -42,7 +42,8 @@
             android:minHeight="48dp"
             android:textColor="@color/lightGrey"
             android:textColorHint="@color/chatBackground"
-            android:textSize="18sp"
+            android:fontFamily="@font/regular"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/et_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -59,7 +60,8 @@
             android:minHeight="48dp"
             android:textColor="@color/lightGrey"
             android:textColorHint="@color/chatBackground"
-            android:textSize="18sp"
+            android:fontFamily="@font/regular"
+            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
 
@@ -73,7 +75,8 @@
             android:minHeight="48dp"
             android:textColor="@color/lightGrey"
             android:textColorHint="@color/chatBackground"
-            android:textSize="18sp"
+            android:fontFamily="@font/regular"
+            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"/>
 
@@ -86,6 +89,8 @@
             android:textColor="@color/lightGrey"
             android:gravity="right"
             android:padding="5dp"
+            android:fontFamily="@font/regular"
+            android:textSize="14sp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
 
@@ -97,6 +102,7 @@
             android:text="Sign Up"
             android:textAllCaps="false"
             android:textColor="@color/lightGrey"
+            android:fontFamily="@font/bold"
             android:textSize="14sp"
             app:backgroundTint="@color/gray_100"
             android:layout_marginTop="15dp"
@@ -116,6 +122,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:textColor="@color/black"
+                android:fontFamily="@font/bold"
                 android:textSize="14sp"
                 android:drawableLeft="@drawable/ic_google"
                 android:text="Google"
@@ -130,6 +137,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/bold"
                 android:textSize="14sp"
                 android:drawableLeft="@drawable/ic_facebook"
                 android:text="Facebook"
@@ -147,6 +155,7 @@
             android:layout_marginTop="15dp"
             android:text="Sign Up with Phone"
             android:textColor="@color/lightGrey"
+            android:fontFamily="@font/regular"
             android:textSize="18sp"/>
 
 

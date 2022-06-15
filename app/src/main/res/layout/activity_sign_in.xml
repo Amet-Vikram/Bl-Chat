@@ -24,9 +24,9 @@
 
         <ImageView
             android:id="@+id/iv_whatsapp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/whatsapp_icon_black"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/whatsapp_medium"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
 
@@ -37,10 +37,11 @@
             android:background="@drawable/edit_text_primary"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:fontFamily="@font/regular"
             android:minHeight="48dp"
             android:textColor="@color/lightGrey"
             android:textColorHint="@color/chatBackground"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
 
@@ -51,10 +52,11 @@
             android:background="@drawable/edit_text_primary"
             android:hint="Password"
             android:inputType="textPassword"
+            android:fontFamily="@font/regular"
+            android:textSize="20sp"
             android:minHeight="48dp"
             android:textColor="@color/lightGrey"
             android:textColorHint="@color/chatBackground"
-            android:textSize="18sp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"/>
 
@@ -65,6 +67,8 @@
             android:layout_gravity="end"
             android:text="Don't have an account yet?"
             android:textColor="@color/lightGrey"
+            android:fontFamily="@font/regular"
+            android:textSize="14sp"
             android:gravity="end"
             android:padding="5dp"
             android:layout_marginTop="10dp"
@@ -76,9 +80,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_primary"
             android:text="Log In"
+            android:fontFamily="@font/bold"
+            android:textSize="14sp"
             android:textAllCaps="false"
             android:textColor="@color/lightGrey"
-            android:textSize="14sp"
             app:backgroundTint="@color/gray_100"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp" />
@@ -97,6 +102,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
                 android:textColor="@color/black"
+                android:fontFamily="@font/bold"
                 android:textSize="14sp"
                 android:drawableLeft="@drawable/ic_google"
                 android:text="Google"
@@ -111,6 +117,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/bold"
                 android:textSize="14sp"
                 android:drawableLeft="@drawable/ic_facebook"
                 android:text="Facebook"
@@ -126,6 +133,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/tv_signup_phone"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/regular"
             android:text="Sign Up with Phone"
             android:textColor="@color/lightGrey"
             android:textSize="18sp"/>
