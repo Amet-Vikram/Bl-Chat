@@ -21,5 +21,7 @@
     <color name="grayBackground">#BCBCBC</color>
     <color name="chatBackground">#AAAAAA</color>
     <color name="gray_100">#364447</color>
+    <color name="gray_500">#262B2B</color>
     <color name="calm_blue">#2DAEC4</color>
+    <color name="mint">#9EB5C3</color>
 </resources>

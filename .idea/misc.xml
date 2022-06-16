@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/drawable/about.xml" value="0.2385" />
         <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/drawable/edit_text_primary.xml" value="0.264" />
-        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/activity_main.xml" value="0.11979166666666667" />
+        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/activity_sign_in.xml" value="0.26875" />
         <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/activity_signup.xml" value="0.25" />
+        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/fragment_calls.xml" value="0.2546875" />
+        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/fragment_chat.xml" value="0.26875" />
+        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/fragment_status.xml" value="0.2546875" />
+        <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/layout/user_chat.xml" value="0.33" />
         <entry key="..\:/Android/Android Studio Projects/BLChatClone/app/src/main/res/menu/menu.xml" value="0.26875" />
       </map>
     </option>

@@ -6,7 +6,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.example.blchatclone.adapters.FragmentAdapter
 import com.example.blchatclone.databinding.ActivityMainBinding
+import com.example.blchatclone.fragments.CallsFragment
+import com.example.blchatclone.fragments.ChatFragment
+import com.example.blchatclone.fragments.StatusFragment
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -16,11 +22,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+
+        val fragmentAdapter = FragmentAdapter(supportFragmentManager, lifecycle)
+        binding.viewPager.adapter = fragmentAdapter
+        TabLayoutMediator(binding.tabLayout, binding.viewPager){ tab, position ->
+            when(position){
+                0 -> tab.text = "CHATS"
+                1 -> tab.text = "STATUS"
+                2 -> tab.text = "CALLS"
+            }
+        }.attach()
+
+
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
