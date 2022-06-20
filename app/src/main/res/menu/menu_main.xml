@@ -6,5 +6,7 @@
         android:title="Group Chats"/>
     <item android:id="@+id/logout"
         android:title="Logout"/>
+    <item android:id="@+id/crash"
+        android:title="Crash"/>
 
 </menu>

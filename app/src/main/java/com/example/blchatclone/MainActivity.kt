@@ -6,12 +6,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.bumptech.glide.Glide
+import androidx.fragment.app.Fragment
 import com.example.blchatclone.adapters.FragmentAdapter
 import com.example.blchatclone.databinding.ActivityMainBinding
-import com.example.blchatclone.fragments.CallsFragment
-import com.example.blchatclone.fragments.ChatFragment
-import com.example.blchatclone.fragments.StatusFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 
@@ -37,8 +34,6 @@ class MainActivity : AppCompatActivity() {
                 2 -> tab.text = "CALLS"
             }
         }.attach()
-
-
     }
 
 
@@ -60,6 +55,9 @@ class MainActivity : AppCompatActivity() {
                 val intentToSignInActivity = Intent(this, SignInActivity::class.java)
                 startActivity(intentToSignInActivity)
                 finish()
+            }
+            R.id.crash -> {
+                throw RuntimeException("Test Crash")
             }
         }
         return super.onOptionsItemSelected(item)

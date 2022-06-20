@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.blchatclone.R
@@ -15,6 +16,7 @@ class UserChatAdapter(userList: ArrayList<Users>,context: Context): RecyclerView
 
     private var userList = ArrayList<Users>()
     private var context: Context
+    private lateinit var activity: AppCompatActivity
 
     init {
         this.userList = userList
@@ -44,6 +46,14 @@ class UserChatAdapter(userList: ArrayList<Users>,context: Context): RecyclerView
 
         holder.userName.text = currentItem.userName
         holder.userLastText.text = currentItem.lastMessage
+
+//        holder.itemView.setOnClickListener {
+//            activity = context as AppCompatActivity
+//            activity.supportFragmentManager.beginTransaction()
+//                .replace(R.id.flFragment, ChatFragment1())
+//                .addToBackStack(null)
+//                .commit()
+//        }
     }
 
     override fun getItemCount(): Int {

@@ -10,12 +10,13 @@ import com.example.blchatclone.R
 import com.example.blchatclone.adapters.UserChatAdapter
 import com.example.blchatclone.databinding.FragmentChatBinding
 import com.example.blchatclone.models.Users
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class ChatFragment : Fragment() {
+class ChatUsersFragment : Fragment() {
 
     private lateinit var binding: FragmentChatBinding
     private var userList = ArrayList<Users>()
@@ -41,8 +42,10 @@ class ChatFragment : Fragment() {
                 for(data in snapshot.children){
                     val user = data.getValue(Users::class.java)
                     user?.userId = data.key.toString()
-                    if (user != null) {
-                        userList.add(user)
+                    user?.also {
+                        if(it.userId != FirebaseAuth.getInstance().uid){
+                            userList.add(it)
+                        }
                     }
                 }
                 adapter?.notifyDataSetChanged()
@@ -52,13 +55,7 @@ class ChatFragment : Fragment() {
 
             }
         })
-
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
-
-
-    }
 }

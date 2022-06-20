@@ -45,7 +45,7 @@ class SignInActivity : AppCompatActivity() {
         progressBar.setMessage("Validating your account")
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken("590615439712-18cb4f0dbpd56r73o4nlckel85b3fqu0.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
@@ -55,13 +55,6 @@ class SignInActivity : AppCompatActivity() {
             userSignIn()
         }
 
-        if(auth.currentUser != null){
-            Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
-            val intentToMainActivity = Intent(this, MainActivity::class.java)
-            startActivity(intentToMainActivity)
-            finish()
-        }
-
         binding.tvSignup.setOnClickListener {
             val intentToSignupActivity = Intent(this, SignupActivity::class.java)
             startActivity(intentToSignupActivity)
@@ -69,6 +62,13 @@ class SignInActivity : AppCompatActivity() {
 
         binding.btnGoogleSignIn.setOnClickListener {
             googleSignIn()
+        }
+
+        if(auth.currentUser != null){
+            Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show()
+            val intentToMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentToMainActivity)
+            finish()
         }
     }
 

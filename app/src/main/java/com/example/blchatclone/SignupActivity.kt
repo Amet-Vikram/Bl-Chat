@@ -74,7 +74,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun userSignUp(email: String, password: String, userName: String) {
-
+        val intentToSignInActivity = Intent(this, SignInActivity::class.java)
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             progressBar.dismiss()
             if(it.isSuccessful){
@@ -84,6 +84,9 @@ class SignupActivity : AppCompatActivity() {
                 //Add to database
                 if (userId != null) {
                     db.reference.child("Users").child(userId).setValue(user)
+                    //Navigate to SignInActivity
+                    startActivity(intentToSignInActivity)
+                    finish()
                 }else{
                     Log.d(TAG, "UserId not found")
                 }

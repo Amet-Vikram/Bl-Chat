@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "590615439712",
+    "firebase_url": "https://bl-chat-clone-default-rtdb.firebaseio.com",
     "project_id": "bl-chat-clone",
     "storage_bucket": "bl-chat-clone.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "590615439712-18cb4f0dbpd56r73o4nlckel85b3fqu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blchatclone",
+            "certificate_hash": "2b96e1b79e6ce59cdfb208e8f17e40d814d2f33e"
+          }
+        },
         {
           "client_id": "590615439712-dv211fuk85mjgnh6558gham8imbf5e2i.apps.googleusercontent.com",
           "client_type": 3
