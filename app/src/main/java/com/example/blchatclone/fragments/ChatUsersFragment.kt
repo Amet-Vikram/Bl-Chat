@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.blchatclone.R
-import com.example.blchatclone.adapters.UserChatAdapter
+import com.example.blchatclone.adapters.UserListAdapter
 import com.example.blchatclone.databinding.FragmentChatBinding
 import com.example.blchatclone.models.Users
 import com.google.firebase.auth.FirebaseAuth
@@ -31,7 +30,7 @@ class ChatUsersFragment : Fragment() {
         binding = FragmentChatBinding.inflate(inflater, container, false)
         db = FirebaseDatabase.getInstance()
 
-        val adapter = context?.let { UserChatAdapter(userList, it) }
+        val adapter = context?.let { UserListAdapter(userList, it) }
 
         binding.rcvChat.adapter = adapter
         binding.rcvChat.layoutManager = LinearLayoutManager(this.context)

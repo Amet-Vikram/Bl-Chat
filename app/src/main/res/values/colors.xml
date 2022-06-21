@@ -16,7 +16,8 @@
     <color name="status_background">#009688</color>
     <color name="chat_background">#8BC34A</color>
     <color name="fb_color">#3C5793</color>
-    <color name="lightgreen">#E5ffcc</color>
+    <color name="light_blue">#9EB5C3</color>
+    <color name="light_orange">#E5ADAC</color>
     <color name="settingsIconColor">#0E8374</color>
     <color name="grayBackground">#BCBCBC</color>
     <color name="chatBackground">#AAAAAA</color>

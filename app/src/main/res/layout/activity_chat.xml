@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper4"
+    android:background="@color/gray_500"
     tools:context=".ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chatToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/chatToolbar"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_et_message"
         android:layout_margin="8dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -34,16 +34,16 @@
             android:id="@+id/etChatText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:ems="10"
             android:fontFamily="@font/regular"
+            android:background="@drawable/bg_et_message"
             android:hint="Enter message"
             android:inputType="text"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/ivSendText"
@@ -81,10 +81,10 @@
                 app:srcCompat="@drawable/leftarrowwhite" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView"
+                android:id="@+id/receiverProfilePic"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:src="@drawable/avatar3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btnBack"
@@ -94,14 +94,45 @@
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:fontFamily="@font/bold"
                 android:text="User Name"
-                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintStart_toEndOf="@+id/receiverProfilePic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivVideoCall"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.565" />
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageView
+                android:id="@+id/ivVideoCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/videocall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivMenu"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
