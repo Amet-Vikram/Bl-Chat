@@ -1,6 +1,8 @@
 package com.example.blchatclone.adapters
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +11,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.blchatclone.R
 import com.example.blchatclone.models.Messages
-import com.example.blchatclone.models.Users
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 private const val SENDER_VIEW_TYPE = 1
 private const val RECEIVER_VIEW_TYPE = 2
@@ -59,6 +64,25 @@ class ChatAdapter(messageList: ArrayList<Messages>, context: Context, receiverID
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val currentMessage = messageList[position]
 //        Log.d(TAG, "Size of the list = ${messageList.size}")
+
+        holder.itemView.setOnLongClickListener {
+           AlertDialog.Builder(context)
+                .setTitle("Are you sure you want to DELETE this text?")
+                .setPositiveButton("Yes") { dialog, which ->
+                    val db = FirebaseDatabase.getInstance()
+                    val senderRoomID = FirebaseAuth.getInstance().uid + receiverID
+
+                    db.reference.child("Chats")
+                        .child(senderRoomID)
+                        .child(currentMessage.messageID)
+                        .setValue(null)
+
+                }.setNegativeButton("No") { dialog, which ->
+                   dialog.dismiss()
+               }.show()
+            false
+        }
+
         if(holder.javaClass == SenderViewHolder::class.java){
             val viewHolder = holder as SenderViewHolder
             viewHolder.senderMessage.text = currentMessage.message

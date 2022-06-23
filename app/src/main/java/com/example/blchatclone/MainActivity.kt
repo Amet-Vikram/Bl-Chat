@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.settings -> {
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                val intentToProfileActivity = Intent(this, ProfileSettingsActivity::class.java)
+                startActivity(intentToProfileActivity)
             }
             R.id.groupChat -> {
                 Toast.makeText(this, "Group Chat", Toast.LENGTH_SHORT).show()

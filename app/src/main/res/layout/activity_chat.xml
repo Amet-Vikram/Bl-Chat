@@ -9,60 +9,57 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvChat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/etChatText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chatToolbar"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+
+    <EditText
+        android:id="@+id/etChatText"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_et_message"
+        android:ems="10"
+        android:fontFamily="@font/regular"
+        android:hint="Enter message"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivSendText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSendText"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <EditText
-            android:id="@+id/etChatText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:fontFamily="@font/regular"
-            android:background="@drawable/bg_et_message"
-            android:hint="Enter message"
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/ivSendText"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginEnd="5dp"
-            app:srcCompat="@drawable/send" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toEndOf="@+id/etChatText"
+        app:srcCompat="@drawable/send" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/chatToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme">
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -94,10 +91,10 @@
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:fontFamily="@font/bold"
                 android:text="User Name"
                 android:textSize="18sp"
-                android:layout_margin="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/receiverProfilePic"
                 app:layout_constraintTop_toTopOf="parent" />

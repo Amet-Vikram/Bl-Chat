@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -56,6 +57,7 @@ class ChatActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             val intentToMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentToMainActivity)
+            finish()
         }
 
         chatAdapter = ChatAdapter(messageList, this, receiverID!!)
@@ -64,7 +66,9 @@ class ChatActivity : AppCompatActivity() {
 
         binding.ivSendText.setOnClickListener {
             val messageBody = binding.etChatText.text.toString()
-            val message = senderID?.let { id -> Messages(id, messageBody, Date().time.toString()) }
+            val currentDate = Date()
+            val time: String = DateFormat.format("dd-MM-yyyy h:mm a", currentDate.time).toString()
+            val message = senderID?.let { id -> Messages(id, messageBody, time) }
             sendMessageToFireStore(senderRoom, receiverRoom, message)
             binding.etChatText.setText("")
         }

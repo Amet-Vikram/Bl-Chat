@@ -11,6 +11,11 @@ import com.bumptech.glide.Glide
 import com.example.blchatclone.ChatActivity
 import com.example.blchatclone.R
 import com.example.blchatclone.models.Users
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import de.hdodenhof.circleimageview.CircleImageView
 
 class UserListAdapter(userList: ArrayList<Users>, context: Context): RecyclerView.Adapter<UserListAdapter.UserChatHolder>() {
@@ -36,6 +41,25 @@ class UserListAdapter(userList: ArrayList<Users>, context: Context): RecyclerVie
 
     override fun onBindViewHolder(holder: UserChatHolder, position: Int) {
         val currentItem = userList[position]
+
+        val roomID = FirebaseAuth.getInstance().uid + currentItem.userId
+
+        FirebaseDatabase.getInstance().reference.child("Chats")
+            .child(roomID)
+            .orderByChild("timeStamp")
+            .limitToLast(1)
+            .addListenerForSingleValueEvent(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if(snapshot.hasChildren()){
+                        for(data in snapshot.children){
+                            holder.userLastText.text = data.child("message").value.toString()
+                        }
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
 
         Glide.with(context)
             .load(currentItem.profilePic)
