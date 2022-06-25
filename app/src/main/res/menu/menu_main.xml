@@ -3,7 +3,7 @@
     <item android:id="@+id/settings"
         android:title="Profile"/>
     <item android:id="@+id/groupChat"
-        android:title="Group Chats"/>
+        android:title="Create Chat Group"/>
     <item android:id="@+id/logout"
         android:title="Logout"/>
     <item android:id="@+id/crash"

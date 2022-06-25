@@ -1,21 +1,26 @@
 package com.example.blchatclone
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.blchatclone.adapters.FragmentAdapter
 import com.example.blchatclone.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var  db: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        db = FirebaseDatabase.getInstance()
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager, lifecycle)
         binding.viewPager.adapter = fragmentAdapter
@@ -49,7 +55,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intentToProfileActivity)
             }
             R.id.groupChat -> {
-                Toast.makeText(this, "Group Chat", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Group Chat", Toast.LENGTH_SHORT).show()
+                requestNewGroup()
             }
             R.id.logout -> {
                 auth.signOut()
@@ -63,4 +70,33 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    private fun requestNewGroup() {
+        val dialogBuilder = AlertDialog.Builder(this, R.style.AlertDialog).setTitle("Enter Group Name: ")
+
+        val etGroupName = EditText(this)
+        etGroupName.hint = "e.g. RSS Yuva Sangh"
+
+        dialogBuilder.setView(etGroupName)
+
+        dialogBuilder.setPositiveButton("Create", DialogInterface.OnClickListener { dialog, which ->
+             if(etGroupName.text.isNotEmpty()){
+                 val groupName = etGroupName.text.toString()
+//                 createNewGroup(groupName)
+             }else{
+                 etGroupName.error = "Please enter a group name"
+                 etGroupName.requestFocus()
+             }
+        })
+
+        dialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
+            dialog.dismiss()
+        })
+
+        dialogBuilder.show()
+    }
+
+//    private fun createNewGroup(groupName: String) {
+//        db.reference.child("Groups").child(groupName)
+//    }
 }
