@@ -56,7 +56,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.groupChat -> {
 //                Toast.makeText(this, "Group Chat", Toast.LENGTH_SHORT).show()
-                requestNewGroup()
+                val intentToGroupChatActivity = Intent(this, GroupChatActivity::class.java)
+                startActivity(intentToGroupChatActivity)
+//                this.moveTaskToBack(false)
+                finish()
             }
             R.id.logout -> {
                 auth.signOut()
@@ -71,32 +74,4 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun requestNewGroup() {
-        val dialogBuilder = AlertDialog.Builder(this, R.style.AlertDialog).setTitle("Enter Group Name: ")
-
-        val etGroupName = EditText(this)
-        etGroupName.hint = "e.g. RSS Yuva Sangh"
-
-        dialogBuilder.setView(etGroupName)
-
-        dialogBuilder.setPositiveButton("Create", DialogInterface.OnClickListener { dialog, which ->
-             if(etGroupName.text.isNotEmpty()){
-                 val groupName = etGroupName.text.toString()
-//                 createNewGroup(groupName)
-             }else{
-                 etGroupName.error = "Please enter a group name"
-                 etGroupName.requestFocus()
-             }
-        })
-
-        dialogBuilder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which ->
-            dialog.dismiss()
-        })
-
-        dialogBuilder.show()
-    }
-
-//    private fun createNewGroup(groupName: String) {
-//        db.reference.child("Groups").child(groupName)
-//    }
 }

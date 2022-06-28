@@ -20,7 +20,7 @@ import kotlin.collections.ArrayList
 private const val SENDER_VIEW_TYPE = 1
 private const val RECEIVER_VIEW_TYPE = 2
 private const val TAG = "ChatAdapter"
-class ChatAdapter(messageList: ArrayList<Messages>, context: Context, receiverID: String): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class ChatAdapter(messageList: ArrayList<Messages>, context: Context, receiverID: String?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     private var messageList = ArrayList<Messages>()
     private var context: Context
